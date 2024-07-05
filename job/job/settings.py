@@ -61,6 +61,15 @@ REST_FRAMEWORK={'DEFAULT_PERMISSION_CLASSES' : ['rest_framework.permissions.Allo
 
 CORS_ORIGIN_ALLOW_ALL=True
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # Add your frontend development server here
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'OPTIONS',  # Include OPTIONS if you are handling CORS preflight requests
+]
 ROOT_URLCONF = 'job.urls'
 
 TEMPLATES = [
