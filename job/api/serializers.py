@@ -1,5 +1,5 @@
 from rest_framework import serializers 
-from main.models import users,session,JobDetails
+from main.models import users,session,JobDetails,candidate
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,4 +12,8 @@ class SessionSerializer(serializers.ModelSerializer):
 class JobSerializer(serializers.ModelSerializer):
     class Meta:
         model = JobDetails
+        fields = '__all__'
+class CandidateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = candidate
         fields = '__all__'

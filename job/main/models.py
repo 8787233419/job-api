@@ -16,7 +16,7 @@ class users(models.Model):
         verbose_name_plural='Users'
 
 class JobDetails(models.Model):
-    jobid=models.CharField(primary_key=True, max_length=10)
+    jobid=models.PositiveIntegerField(primary_key=True)
     userid = models.ForeignKey(users, on_delete=models.CASCADE)
     position=models.CharField(max_length=20)
     companyname=models.CharField(max_length=20)
@@ -24,7 +24,7 @@ class JobDetails(models.Model):
     details=models.CharField(max_length=250,null=True)
 
     def __str__(self):
-        return self.jobid
+        return f"Job {self.jobid}: {self.position} at {self.companyname}"
     
     class Meta:
         verbose_name_plural='Job Details'
